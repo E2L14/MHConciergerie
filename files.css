@@ -1,12 +1,33 @@
+/* Ajout des polices personnalisées */
+@font-face {
+    font-family: 'TT Drugs';
+    src: url('fonts/TT Drugs Trial Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Nixie';
+    src: url('fonts/NixieOne.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Cocomat Pro';
+    src: url('fonts/Cocomat Light-trial.ttf') format('truetype');
+}
+
 :root {
-    --primary: #3B4726;         /* Vert kaki */
-    --secondary: #B8A87D;       /* Couleur or/beige du logo */
+    --primary: #3B4726;
+    --secondary: #B8A87D;
     --text-light: #ffffff;
     --text-dark: #000000;
     --surface: #FFFFFF;         /* Fond blanc */
     --shadow: 0 4px 12px rgba(0,0,0,0.08);
     --radius: 8px;
     --container: 1200px;
+    
+    /* Polices personnalisées */
+    --font-title: 'TT Drugs', serif;
+    --font-subtitle: 'Nixie', sans-serif;
+    --font-body: 'Cocomat Pro', sans-serif;
 }
 
 /* Base styles */
@@ -17,7 +38,7 @@
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-body);
     line-height: 1.6;
     color: var(--text-dark);
     background-color: #FFFFFF;
