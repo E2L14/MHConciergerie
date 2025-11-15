@@ -1443,7 +1443,7 @@ img {
     font-size: 8rem;
     font-weight: 700;
     color: rgba(59, 71, 38, 0.08);
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-title) !important; /* TT Drugs pour les numéros */
     z-index: 0;
 }
 
@@ -1551,7 +1551,7 @@ img {
 .cta-card h2 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-title) !important; /* TT Drugs pour les gros titres */
 }
 
 .cta-card p {
@@ -1580,470 +1580,148 @@ img {
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Application des polices - correction complète */
+
+/* Titres principaux (h1) - TT Drugs */
+h1,
+.hero-title,
+.section-title,
+.contact-hero h1,
+.services-header h1,
+.services-hero h1,
+.legal-header h1,
+.unified-form-container h2,
+.cta-card h2 {
+    font-family: var(--font-title) !important;
 }
 
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+/* Sous-titres (h2, h3, h4) - Nixie */
+h2,
+h3,
+h4,
+.subtitle,
+.service-card h3,
+.service-content h2,
+.legal-content h2,
+.appointment-form h3,
+.section-subtitle,
+.info-item h3,
+.avis-name,
+.testimonial-author,
+.legal-card h2 {
+    font-family: var(--font-subtitle) !important;
 }
 
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+/* Correction spécifique pour les éléments qui utilisent encore Playfair Display */
+.services-header h1,
+.services-hero h1,
+.legal-header h1,
+.service-content h2,
+.legal-card h2,
+.cta-card h2,
+.service-number,
+.service-item .service-content h2,
+.appointment-form h3 {
+    font-family: var(--font-title) !important;
 }
 
-.fade-in-up {
-    animation: fadeInUp 0.8s ease forwards;
+/* Texte de paragraphe et autres éléments - Cocomat Pro */
+body,
+p,
+.hero p,
+.service-card p,
+.service-content p,
+.legal-content p,
+.testimonial-content,
+.avis-text,
+.appointment-subtitle,
+.service-intro,
+.cta-card p,
+.legal-text p,
+.nav-list a,
+.footer-links a,
+.btn,
+.form-group label,
+.form-group input,
+.form-group textarea,
+.submit-btn,
+.info-item a,
+.time-slot .time,
+.time-slot .period,
+.brand,
+.info-item,
+.avis-author,
+.testimonial-author {
+    font-family: var(--font-body) !important;
 }
 
-.fade-in-left {
-    animation: fadeInLeft 0.8s ease forwards;
+/* Suppression des références à Playfair Display */
+.services-header h1 {
+    font-size: 4rem;
+    font-family: var(--font-title) !important; /* Remplace Playfair Display */
+    color: var(--primary);
+    margin-bottom: 1.5rem;
 }
 
-.fade-in-right {
-    animation: fadeInRight 0.8s ease forwards;
+.services-hero h1 {
+    font-size: 4.5rem;
+    font-family: var(--font-title) !important; /* Remplace Playfair Display */
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
 }
 
-.delay-1 {
-    animation-delay: 0.2s;
-    opacity: 0;
+.legal-header h1 {
+    font-size: 4rem;
+    font-family: var(--font-title) !important; /* Remplace Playfair Display */
+    color: var(--primary);
+    margin-bottom: 1.5rem;
 }
 
-.delay-2 {
-    animation-delay: 0.4s;
-    opacity: 0;
+.service-content h2 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-subtitle) !important; /* Nixie pour les h2 */
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-    .service-item,
-    .service-item.reverse {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .service-item.reverse .service-image,
-    .service-item.reverse .service-content {
-        order: unset;
-    }
-    
-    .services-hero h1 {
-        font-size: 3rem;
-    }
+.legal-card h2 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-subtitle) !important; /* Nixie pour les h2 */
+    text-align: center;
 }
 
-@media (max-width: 768px) {
-    .services-hero {
-        padding: 120px 0 60px;
-    }
-    
-    .cta-card {
-        padding: 2.5rem 1.5rem;
-    }
-    
-    .cta-card h2 {
-        font-size: 2rem;
-    }
+.service-number {
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    font-size: 8rem;
+    font-weight: 700;
+    color: rgba(59, 71, 38, 0.08);
+    font-family: var(--font-title) !important; /* TT Drugs pour les numéros */
+    z-index: 0;
 }
 
-/* Responsive global */
-* {
-    box-sizing: border-box;
+.cta-card h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-title) !important; /* TT Drugs pour les gros titres */
 }
 
-@media (max-width: 768px) {
-    .header-inner {
-        padding: 0 1rem;
-    }
-
-    .brand img {
-        max-width: 120px;
-    }
-    
-    /* Menu burger pour mobile */
-    .nav-toggle {
-        display: block;
-        background: none;
-        border: none;
-        padding: 0.5rem;
-        cursor: pointer;
-        color: var(--primary);
-    }
-    
-    .nav-list {
-        display: none;
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        background: var(--secondary);
-        flex-direction: column;
-        padding: 2rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    
-    .nav-list.active {
-        display: flex;
-    }
-
-    .hero {
-        padding: 120px 0 80px;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .avis-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-    
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-form {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-info {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .contact-hero h1 {
-        font-size: 3rem;
-    }
+.legal-footer-card h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-subtitle) !important; /* Nixie pour h3 */
 }
 
-@media (max-width: 1024px) {
-  .container {
-    width: 100%;
-  }
-  
-  .hero {
-    padding: 100px 0 60px;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .btn {
-    width: 100%;
-  }
+.appointment-form h3 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-subtitle) !important; /* Nixie pour h3 */
 }
 
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 3rem;
-    }
-
-    .hero p {
-        font-size: 1.25rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-    }
-}
-
-/* About section responsive */
-.about-section {
-    padding: 60px 2rem;
-}
-
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-}
-
-@media (max-width: 992px) {
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .about-image {
-        order: -1;
-    }
-
-    .image-wrapper img {
-        height: 400px;
-    }
-}
-
-@media (max-width: 768px) {
-    .about-section {
-        padding: 50px 1rem;
-    }
-
-    .about-text h2 {
-        font-size: 2rem;
-    }
-
-    .about-text p {
-        font-size: 1rem;
-    }
-
-    .feature-box {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .image-wrapper img {
-        height: 300px;
-    }
-
-    .image-decoration {
-        display: none;
-    }
-}
-
-/* Services preview responsive */
-.services-preview-section {
-    padding: 60px 2rem;
-}
-
-.services-grid-home {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-}
-
-@media (max-width: 992px) {
-    .services-grid-home {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-
-    .section-header-center h2 {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .services-preview-section {
-        padding: 50px 1rem;
-    }
-
-    .services-grid-home {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .service-card-home {
-        padding: 2rem 1.5rem;
-    }
-
-    .section-header-center h2 {
-        font-size: 2rem;
-    }
-
-    .section-header-center p {
-        font-size: 1rem;
-    }
-}
-
-/* Process section responsive */
-.process-section {
-    padding: 60px 2rem;
-}
-
-@media (max-width: 992px) {
-    .process-timeline::before {
-        left: 40px;
-    }
-
-    .process-step,
-    .process-step:nth-child(even) {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .step-number {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .process-section {
-        padding: 50px 1rem;
-    }
-
-    .step-content h3 {
-        font-size: 1.5rem;
-    }
-
-    .step-content p {
-        font-size: 1rem;
-    }
-}
-
-/* Testimonials responsive */
-.testimonials-section {
-    padding: 60px 2rem;
-}
-
-.testimonials-slider {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-@media (max-width: 992px) {
-    .testimonials-slider {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .testimonials-section {
-        padding: 50px 1rem;
-    }
-
-    .testimonial-card-home {
-        padding: 2rem 1.5rem;
-    }
-
-    .testimonial-text {
-        font-size: 1rem;
-    }
-}
-
-/* CTA final responsive */
-.cta-final-section {
-    padding: 60px 2rem;
-}
-
-.cta-final-content {
-    padding: 0 1rem;
-}
-
-@media (max-width: 992px) {
-    .cta-final-content h2 {
-        font-size: 3rem;
-    }
-
-    .cta-final-content p {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .cta-final-section {
-        padding: 50px 1rem;
-    }
-
-    .cta-final-content h2 {
-        font-size: 2rem;
-    }
-
-    .cta-final-content p {
-        font-size: 1rem;
-    }
-
-    .btn-light {
-        padding: 1rem 2rem;
-        font-size: 1rem;
-        width: 100%;
-    }
-}
-
-/* Container global */
-.container {
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 0 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 0.75rem;
-    }
-}
-
-/* Boutons responsive */
-.btn {
-    padding: 0.8rem 2rem;
-    border-radius: var(--radius);
-    text-decoration: none;
-    display: inline-block;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-@media (max-width: 768px) {
-    .btn {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.95rem;
-    }
-}
-
-/* Footer responsive */
-.site-footer {
-    padding: 2rem 1rem;
-}
-
-.footer-links {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-@media (max-width: 768px) {
-    .footer-links {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-    }
-
-    .footer-inner {
-        padding: 0 1rem;
-    }
-}
+/* ...existing code... */
