@@ -420,90 +420,61 @@ img {
 
 .hero-title {
     font-family: var(--font-title) !important;
-    font-size: 5rem;
+    font-size: 3rem !important;
     color: var(--primary);
-    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.8);
-    margin-bottom: 3rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 700;
-    animation: heroTitleAnimation 1.5s ease-out;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1) !important;
+    margin-bottom: 2rem !important;
+    line-height: 1.1 !important;
+    letter-spacing: 2px !important; /* Ajoute de l'espace entre les lettres */
+    word-spacing: 8px !important; /* Ajoute de l'espace entre les mots */
+    text-align: center !important;
+    padding: 0 1rem !important;
+    max-width: 100% !important;
+    font-weight: normal !important;
 }
 
-.hero-subtitle {
-    display: none;
-}
-
-.hero-actions {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    padding: 0 1rem;
-    animation: heroActionsAnimation 2s ease-out 0.6s both;
-}
-
-/* Correction des boutons de la page d'accueil */
-.hero-actions .btn {
-    display: inline-block;
-    padding: 1rem 2.5rem !important;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem !important;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    line-height: 1.2 !important;
-    min-width: 220px !important;
-    height: 50px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-.hero-actions .btn-primary {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: var(--text-light);
-    box-shadow: var(--shadow);
-}
-
-.hero-actions .btn-outline {
-    background: rgba(255, 255, 255, 0.9);
-    color: var(--primary);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-/* S'assurer que les textes ont la même taille */
-.hero-actions .btn span {
-    font-size: 1rem !important;
-    font-weight: 600 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-}
-
-/* Animations */
-@keyframes heroTitleAnimation {
-    0% {
-        opacity: 0;
-        transform: translateY(-50px) scale(0.9);
+/* Desktop - garder sur une ligne avec espacement */
+@media (min-width: 769px) {
+    .hero-title {
+        font-size: 3.2rem !important;
+        letter-spacing: 3px !important;
+        word-spacing: 12px !important;
     }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
+    
+    .mobile-break {
+        display: none !important;
     }
 }
 
-@keyframes heroActionsAnimation {
-    0% {
-        opacity: 0;
-        transform: translateY(40px);
+/* Tablette */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem !important;
+        letter-spacing: 2px !important;
+        word-spacing: 8px !important;
     }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
+    
+    .mobile-break {
+        display: block !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem !important;
+        letter-spacing: 1px !important;
+        word-spacing: 6px !important;
+        line-height: 1.2 !important;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 1.7rem !important;
+        letter-spacing: 0.5px !important;
+        word-spacing: 4px !important;
     }
 }
 
@@ -553,8 +524,9 @@ img {
 /* Responsive hero - correction aussi */
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 3.5rem;
-        letter-spacing: 2px;
+        font-size: 2.2rem !important;
+        letter-spacing: -2px !important;
+        padding: 0 0.5rem !important;
     }
 
     .hero-actions {
@@ -572,10 +544,83 @@ img {
 }
 
 @media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.8rem !important;
+        letter-spacing: -2px !important;
+        line-height: 1.2 !important;
+    }
+
     .hero-actions .btn {
         max-width: 260px;
         padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 1.6rem !important;
+        letter-spacing: -2.5px !important;
+    }
+}
+
+/* Correction de l'espacement des boutons hero */
+.hero-actions {
+    display: flex;
+    gap: 1.5rem; /* Espace entre les boutons */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.hero-actions .btn {
+    margin: 0.5rem; /* Marge de sécurité autour de chaque bouton */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem !important;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem !important;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    line-height: 1.2 !important;
+    min-width: 220px !important;
+    height: 50px !important;
+}
+
+/* Mobile - empiler verticalement avec plus d'espace */
+@media (max-width: 768px) {
+    .hero-actions {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    
+    .hero-actions .btn {
+        width: 90%;
+        max-width: 300px;
+        margin: 0.5rem 0;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+    .hero-actions {
+        gap: 0.8rem;
+    }
+    
+    .hero-actions .btn {
+        width: 95%;
+        max-width: 280px;
+        font-size: 0.9rem !important;
+        padding: 0.9rem 2rem !important;
     }
 }
 
@@ -1898,4 +1943,48 @@ img {
     .mobile-break {
         display: block;
     }
+}
+
+/* Logo en arrière-plan du header avec bords arrondis */
+
+/* Page Contact - logo arrondi */
+.contact-hero::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background-image: url('images/logo.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 1;
+    border-radius: 50%; /* Rond complet */
+}
+
+/* Page Mentions Légales - logo arrondi */
+.legal-header::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background-image: url('images/logo.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 1;
+    border-radius: 50%; /* Rond complet */
+}
+
+/* Alternative avec coins arrondis (si vous préférez rectangulaire arrondi) */
+.contact-hero.rounded::after,
+.legal-header.rounded::after {
+    border-radius: 25px; /* Coins arrondis au lieu de rond complet */
 }
