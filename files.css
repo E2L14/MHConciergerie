@@ -420,7 +420,7 @@ img {
 
 .hero-title {
     font-family: var(--font-title) !important;
-    font-size: 3rem !important;
+    font-size: 4rem !important; /* Augmenté de 3rem à 4rem */
     color: var(--primary);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1) !important;
     margin-bottom: 2rem !important;
@@ -436,7 +436,7 @@ img {
 /* Desktop - garder sur une ligne avec espacement */
 @media (min-width: 769px) {
     .hero-title {
-        font-size: 3.2rem !important;
+        font-size: 4rem !important; /* Augmenté de 3.2rem à 4rem */
         letter-spacing: 3px !important;
         word-spacing: 12px !important;
     }
@@ -446,10 +446,34 @@ img {
     }
 }
 
+/* Desktop - titre plus grand */
+.hero-title {
+    font-size: 4rem !important; /* Augmenté de 3rem à 4rem */
+    line-height: 1.1 !important;
+    letter-spacing: 2px !important;
+    word-spacing: 8px !important;
+    text-align: center !important;
+    margin-bottom: 2rem !important;
+    padding: 0 1rem !important;
+    max-width: 100% !important;
+    font-weight: normal !important;
+    color: var(--primary) !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+/* Desktop large */
+@media (min-width: 1200px) {
+    .hero-title {
+        font-size: 4.5rem !important; /* Encore plus grand sur très grands écrans */
+        letter-spacing: 3px !important;
+        word-spacing: 12px !important;
+    }
+}
+
 /* Tablette */
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 2.5rem !important;
+        font-size: 3.2rem !important; /* Augmenté de 2.8rem à 3.2rem */
         letter-spacing: 2px !important;
         word-spacing: 8px !important;
     }
@@ -462,7 +486,7 @@ img {
 /* Mobile */
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2rem !important;
+        font-size: 2.8rem !important; /* Augmenté de 2.4rem à 2.8rem */
         letter-spacing: 1px !important;
         word-spacing: 6px !important;
         line-height: 1.2 !important;
@@ -472,7 +496,7 @@ img {
 /* Très petits écrans */
 @media (max-width: 375px) {
     .hero-title {
-        font-size: 1.7rem !important;
+        font-size: 2.4rem !important; /* Augmenté de 2.1rem à 2.4rem */
         letter-spacing: 0.5px !important;
         word-spacing: 4px !important;
     }
