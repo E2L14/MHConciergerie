@@ -14,132 +14,139 @@
 </head>
 <body>
     <header class="site-header">
-    <div class="header-inner">
-        <a href="index.html" class="brand">
-            <img src="images/logo.jpg" alt="MH Conciergerie">
-        </a>
-        <nav>
-            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu">☰</button>
-            <ul class="nav-list" id="primary-menu">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-  </header>
+        <div class="header-inner">
+            <a href="index.html" class="brand" id="logo-menu-toggle">
+                <img src="images/logo.jpg" alt="MH Conciergerie">
+                <span class="brand-text">MH Conciergerie</span>
+            </a>
+            
+            <!-- Menu déroulant -->
+            <nav class="dropdown-menu" id="dropdown-menu">
+                <ul class="dropdown-list">
+                    <li><a href="index.html">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-text">Accueil</span>
+                    </a></li>
+                    <li><a href="services.html">
+                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-text">Services</span>
+                    </a></li>
+                    <li><a href="contact.html" class="active">
+                        <span class="nav-icon">📧</span>
+                        <span class="nav-text">Contact</span>
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <main>
-        <section class="contact-hero">
+        <section class="contact-section section">
             <div class="container">
-                <h1>Contactez-nous !</h1>
-                <p class="subtitle">Pour toute demande d'information, n'hésitez pas à nous contacter.<br>
-                Nous serons ravis d'échanger avec vous!</p>
+                <h1 class="section-title">Contactez-nous</h1>
+                <p class="section-subtitle">Prêt à confier votre bien ? Discutons de votre projet ensemble.</p>
                 
-                <div class="contact-info">
-                    <div class="info-item">
-                        <h3>Téléphone</h3>
-                        <p><a href="tel:0665657600">06 65 65 76 00</a></p>
-                    </div>
-                    <div class="info-item">
-                        <h3>Email</h3>
-                        <p><a href="mailto:contact@mhconciergerie.fr">mh.homeconciergerie@gmail.com</a></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact-form-section">
-    <div class="container">
-        <div class="unified-form-container">
-            <h2>Contactez-nous !</h2>
-            <p class="subtitle">Pour toute demande d'information, n'hésitez pas à nous contacter.</p>
-            
-            <form class="contact-form" action="https://formspree.io/f/mvgwnpvy" method="POST">
-                <div class="form-group">
-                    <label for="nom">Nom*</label>
-                    <input type="text" id="nom" name="nom" placeholder="Entrez votre nom ici" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="prenom">Prénom*</label>
-                    <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom ici" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="telephone">Téléphone*</label>
-                    <input type="tel" id="telephone" name="telephone" placeholder="Réponse courte" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Votre adresse mail ici*</label>
-                    <input type="email" id="email" name="email" placeholder="Entrez votre email ici" required>
-                </div>
-
-                <div class="form-group checkbox-group">
-                    <input type="checkbox" id="request-appointment" name="request-appointment">
-                    <label for="request-appointment">Je souhaite prendre rendez-vous</label>
-                </div>
-
-                <!-- Champs de rendez-vous intégrés -->
-                <div class="appointment-fields" id="appointment-fields" style="display: none;">
-                    <div class="form-group">
-                        <label for="appointment-date">Date souhaitée*</label>
-                        <input type="date" id="appointment-date" name="date">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Créneau horaire préféré*</label>
-                        <div class="time-slots">
-                            <label class="time-slot">
-                                <input type="radio" name="timeSlot" value="9h - 12h">
-                                <span class="time-content">
-                                    <span class="time">9h - 12h</span>
-                                    <span class="period">Matin</span>
-                                </span>
-                            </label>
-                            <label class="time-slot">
-                                <input type="radio" name="timeSlot" value="14h - 17h">
-                                <span class="time-content">
-                                    <span class="time">14h - 17h</span>
-                                    <span class="period">Après-midi</span>
-                                </span>
-                            </label>
-                            <label class="time-slot">
-                                <input type="radio" name="timeSlot" value="17h - 19h">
-                                <span class="time-content">
-                                    <span class="time">17h - 19h</span>
-                                    <span class="period">Fin de journée</span>
-                                </span>
-                            </label>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Nos coordonnées</h2>
+                        <div class="contact-item">
+                            <strong>Téléphone :</strong>
+                            <a href="tel:+33123456789">+33 1 23 45 67 89</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Email :</strong>
+                            <a href="mailto:contact@mhconciergerie.fr">contact@mhconciergerie.fr</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Zone d'intervention :</strong>
+                            <span>Côte d'Albâtre, Seine-Maritime</span>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Horaires :</strong>
+                            <span>7j/7 - 8h à 20h (Urgences 24h/24)</span>
+                        </div>
+                        
+                        <div class="social-links">
+    </a>
                         </div>
                     </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Votre message ici*</label>
-                    <textarea id="message" name="message" placeholder="Écrivez votre message ici" required></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">Envoyer votre message</button>
-            </form>
-        </div>
-    </div>
-</section>
 
-        <section class="map-section">
-            <div class="container">
-                <h2>Où nous trouver</h2>
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20602.077549459247!2d0.6833333!3d49.7666667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e0a8f67b147aa7%3A0x40c14484fb65ef0!2s76460%20Drosay!5e0!3m2!1sfr!2sfr!4v1708467529432!5m2!1sfr!2sfr"
-                        width="100%" 
-                        height="450" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                    <div class="contact-form">
+                        <h2>Demandez votre devis gratuit</h2>
+                        <form action="https://formspree.io/f/mvgwnpvy" method="POST">
+                            <div class="form-group">
+                                <label for="nom">Nom*</label>
+                                <input type="text" id="nom" name="nom" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="prenom">Prénom*</label>
+                                <input type="text" id="prenom" name="prenom" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="telephone">Téléphone*</label>
+                                <input type="tel" id="telephone" name="telephone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email*</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="property-type">Type de bien</label>
+                                <select id="property-type" name="propertyType">
+                                    <option value="">Sélectionnez le type</option>
+                                    <option value="appartement">Appartement</option>
+                                    <option value="maison">Maison</option>
+                                    <option value="studio">Studio</option>
+                                    <option value="villa">Villa</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <label>
+                                    <input type="checkbox" id="request-appointment" name="requestAppointment" value="oui">
+                                    Je souhaite planifier un rendez-vous
+                                </label>
+                            </div>
+                            
+                            <!-- Champs de rendez-vous -->
+                            <div id="appointment-fields" style="display: none;">
+                                <div class="form-group">
+                                    <label for="appointment-date">Date souhaitée*</label>
+                                    <input type="date" id="appointment-date" name="appointmentDate">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Créneau horaire préféré*</label>
+                                    <div class="time-slots">
+                                        <label>
+                                            <input type="radio" name="timeSlot" value="9h - 12h">
+                                            9h - 12h (Matin)
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="timeSlot" value="14h - 17h">
+                                            14h - 17h (Après-midi)
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="timeSlot" value="18h - 20h">
+                                            18h - 20h (Soir)
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Votre message</label>
+                                <textarea id="message" name="message" rows="5"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -155,7 +162,7 @@
                 <a href="mention.html">Mentions légales</a>
                 <a href="https://www.instagram.com/mhome_conciergerie/?hl=fr" target="_blank" class="instagram-link" aria-label="Suivez-nous sur Instagram">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.40z"/>
                     </svg>
                 </a>
             </div>
@@ -163,7 +170,60 @@
         </div>
     </footer>
 
-  <script src="assets/js/app.js" defer></script>
-  <script src="contact.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const logoToggle = document.getElementById('logo-menu-toggle');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    
+    if (logoToggle && dropdownMenu) {
+        logoToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            logoToggle.classList.toggle('active');
+            dropdownMenu.classList.toggle('active');
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.header-inner')) {
+                logoToggle.classList.remove('active');
+                dropdownMenu.classList.remove('active');
+            }
+        });
+
+        const dropdownLinks = document.querySelectorAll('.dropdown-list a');
+        dropdownLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                logoToggle.classList.remove('active');
+                dropdownMenu.classList.remove('active');
+            });
+        });
+    }
+
+    // Formulaire de rendez-vous
+    const appointmentCheckbox = document.getElementById('request-appointment');
+    const appointmentFields = document.getElementById('appointment-fields');
+    const appointmentDate = document.getElementById('appointment-date');
+    const timeSlots = document.querySelectorAll('input[name="timeSlot"]');
+
+    if (appointmentCheckbox) {
+        appointmentCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                appointmentFields.style.display = 'block';
+                appointmentDate.setAttribute('required', 'required');
+                timeSlots.forEach(slot => slot.setAttribute('required', 'required'));
+            } else {
+                appointmentFields.style.display = 'none';
+                appointmentDate.removeAttribute('required');
+                timeSlots.forEach(slot => {
+                    slot.removeAttribute('required');
+                    slot.checked = false;
+                });
+                appointmentDate.value = '';
+            }
+        });
+    }
+});
+</script>
 </body>
 </html>

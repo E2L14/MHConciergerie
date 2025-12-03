@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>MH Conciergerie - [Page Title]</title>
+    <title>MH Conciergerie - Accueil</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
@@ -20,15 +20,26 @@
 <body>
     <header class="site-header">
         <div class="header-inner">
-            <a href="index.html" class="brand">
+            <a href="index.html" class="brand" id="logo-menu-toggle">
                 <img src="images/logo.jpg" alt="MH Conciergerie">
+                <span class="brand-text">MH Conciergerie</span>
             </a>
-            <nav>
-                <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu">☰</button>
-                <ul class="nav-list" id="primary-menu">
-                    <li><a href="index.html" class="active">Accueil</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+            
+            <!-- Menu déroulant -->
+            <nav class="dropdown-menu" id="dropdown-menu">
+                <ul class="dropdown-list">
+                    <li><a href="index.html" class="active">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-text">Accueil</span>
+                    </a></li>
+                    <li><a href="services.html">
+                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-text">Services</span>
+                    </a></li>
+                    <li><a href="contact.html">
+                        <span class="nav-icon">📧</span>
+                        <span class="nav-text">Contact</span>
+                    </a></li>
                 </ul>
             </nav>
         </div>
@@ -37,82 +48,124 @@
     <main>
         <section id="home" class="hero">
             <div class="hero-inner container">
-                    <div class="hero-actions">
-                        <a href="contact.html" class="btn btn-primary">Nous contacter</a>
-                    </div>
+                <h1 class="hero-title">MHome Conciergerie</h1>
+                <div class="hero-actions">
+                    <a href="#contact-form" class="btn btn-primary">Nous contacter</a>
+                    <a href="services.html" class="btn btn-outline">Découvrir nos services</a>
                 </div>
             </div>
         </section>
 
-        <section id="services-preview" class="section">
-    <div class="container">
-        <h2 class="section-title">Découvrez nos services de conciergerie</h2>
-        <p class="section-subtitle">Propriétaire d'un ou plusieurs logements meublés en Seine-Maritime ?<br>
-        Confiez-nous vos clés, nous prenons tout en main pour vous simplifier la vie.</p>
-        
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                    </svg>
-                </div>
-                <h3>Gestion complète</h3>
-                <p>Bénéficiez d'une gestion complète pour un service sans tracas et adapté.</p>
-            </div>
+        <section id="why-conciergerie" class="section">
+            <div class="container">
+                <h2 class="section-title">Pourquoi passer par une conciergerie ?</h2>
+                <p class="section-subtitle">Propriétaire d'un ou plusieurs logements meublés sur la côte d'Albâtre ?<br>
+                Confiez-nous vos clés, nous prenons tout en main pour vous simplifier la vie.</p>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-image">
+                            Gestion<br>complète
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Gestion complète</h3>
+                            <p>Bénéficiez d'une gestion complète pour un service sans tracas et adapté à vos besoins.</p>
+                        </div>
+                    </div>
 
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="9" cy="7" r="4"></circle>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                    </svg>
-                </div>
-                <h3>Gestion des voyageurs 7j/7</h3>
-                <p>Profitez d'une assistance disponible 7j/7 pour répondre à vos voyageurs à tout moment.</p>
-            </div>
+                    <div class="benefit-card">
+                        <div class="benefit-image">
+                            Assistance<br>24/7
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Assistance des voyageurs 7j/7</h3>
+                            <p>Profitez d'une assistance disponible 7j/7 pour répondre à vos voyageurs à tout moment.</p>
+                        </div>
+                    </div>
 
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M3 3h18v18H3zM12 8v8"></path>
-                        <path d="M8 12h8"></path>
-                    </svg>
+                    <div class="benefit-card">
+                        <div class="benefit-image">
+                            Entretien du<br>logement
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Entretien du logement</h3>
+                            <p>Nous garantissons l'entretien de votre bien à chaque rotation pour une expérience irréprochable.</p>
+                        </div>
+                    </div>
                 </div>
-                <h3>Gestion du ménage et du linge</h3>
-                <p>Nous garantissons l'entretien de votre bien ainsi à chaque rotation.</p>
-            </div>
-        </div>
 
-        <div class="services-cta">
-            <a href="services.html" class="btn btn-primary">Découvrir nos prestations</a>
-        </div>
-    </div>
-</section>
+                <div class="services-cta">
+                    <a href="services.html" class="btn btn-primary">Découvrir nos prestations</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulaire de contact intégré -->
+        <section id="contact-form" class="section contact-form-section">
+            <div class="container">
+                <h2 class="section-title">Contactez-nous</h2>
+                <p class="section-subtitle">Une question ? Un projet ? N'hésitez pas à nous écrire !</p>
+                
+                <div class="contact-form-container">
+                    <form class="home-contact-form" action="https://formspree.io/f/mvgwnpvy" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nom">Nom*</label>
+                                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="prenom">Prénom*</label>
+                                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="telephone">Téléphone*</label>
+                                <input type="tel" id="telephone" name="telephone" placeholder="Votre numéro" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email*</label>
+                                <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message*</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet ou posez-nous votre question..." required></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
 
         <section class="testimonials-section">
-    <div class="section-header">
-        <h2>Avis clients</h2>
-        <p class="subtitle">Ce que pensent nos clients de nos services</p>
-    </div>
-    
-    <div class="testimonials-grid">
-        <div class="testimonial-card">
-            <div class="testimonial-rating">★★★★★</div>
-            <p class="testimonial-content">Appartement magnifique, une décoration sublime, on s'y sent vite à l'aise, logement bien équipé, je recommande à 100%, hôte accueillante et serviable, réactive par message ! Ce fut un pur plaisir ! Encore merci</p>
-            <div class="testimonial-author">Marine</div>
-        </div>
+            <div class="section-header">
+                <h2>Avis clients</h2>
+                <p class="subtitle">Ce que pensent nos clients de nos services</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-content">Appartement magnifique, une décoration sublime, on s'y sent vite à l'aise, logement bien équipé, je recommande à 100%, hôte accueillante et serviable, réactive par message ! Ce fut un pur plaisir ! Encore merci</p>
+                    <div class="testimonial-author">Marine</div>
+                </div>
 
-        <div class="testimonial-card">
-            <div class="testimonial-rating">★★★★★</div>
-            <p class="testimonial-content">Week-end au top à Dieppe grâce au logement de Laurine qui n'est vraiment pas loin du centre, spacieux et très cozy. N'hésitez pas à reserver, l'appartement est encore mieux que sur les photos</p>
-            <div class="testimonial-author">Jérome</div>
-        </div>
-    </div>
-</section>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-content">Week-end au top à Dieppe grâce au logement de Laurine qui n'est vraiment pas loin du centre, spacieux et très cozy. N'hésitez pas à reserver, l'appartement est encore mieux que sur les photos</p>
+                    <div class="testimonial-author">Jérome</div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="site-footer">
         <div class="footer-inner container">
@@ -124,15 +177,53 @@
                 <a href="mention.html">Mentions légales</a>
                 <a href="https://www.instagram.com/mhome_conciergerie/?hl=fr" target="_blank" class="instagram-link" aria-label="Suivez-nous sur Instagram">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.40z"/>
                     </svg>
                 </a>
             </div>
             <p class="muted">© 2025 MH Conciergerie. Tous droits réservés.</p>
         </div>
     </footer>
+    
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const logoToggle = document.getElementById('logo-menu-toggle');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    
+    if (logoToggle && dropdownMenu) {
+        // Toggle du menu au clic sur le logo
+        logoToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            logoToggle.classList.toggle('active');
+            dropdownMenu.classList.toggle('active');
+        });
+
+        // Fermer le menu en cliquant ailleurs
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.header-inner')) {
+                logoToggle.classList.remove('active');
+                dropdownMenu.classList.remove('active');
+            }
+        });
+
+        // Fermer le menu en cliquant sur un lien
+        const dropdownLinks = document.querySelectorAll('.dropdown-list a');
+        dropdownLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                logoToggle.classList.remove('active');
+                dropdownMenu.classList.remove('active');
+            });
+        });
+    }
+
+    // Reste du JavaScript existant pour les formulaires...
+});
+</script>
+
     <script src="assets/js/asset_js.js" defer></script>
-<script src="app.js" defer></script>
+    <script src="app.js" defer></script>
 </body>
 </html>
 
