@@ -2037,3 +2037,92 @@ img {
 .legal-header.rounded::after {
     border-radius: 25px; /* Coins arrondis au lieu de rond complet */
 }
+
+/* Correction de la position du logo Instagram sur mobile */
+
+/* Footer responsive - correction du logo Instagram */
+@media (max-width: 768px) {
+    .footer-inner {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+    
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .instagram-link {
+        align-self: center !important;
+        margin: 0 auto !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+    }
+    
+    /* Centrer tous les liens du footer */
+    .footer-links a {
+        text-align: center;
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-inner {
+        padding: 1.5rem 0.5rem;
+        gap: 1rem;
+    }
+    
+    .footer-links {
+        gap: 0.8rem;
+    }
+    
+    .instagram-link {
+        margin: 0.5rem auto !important;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .instagram-link svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Alternative - si le problème persiste, forcer la structure */
+.site-footer {
+    text-align: center;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+@media (max-width: 768px) {
+    .footer-inner {
+        flex-direction: column;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+    
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100%;
+    }
+}
