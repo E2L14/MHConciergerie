@@ -1,24 +1,45 @@
-/* Ajout des polices personnalisées */
+/* Nouvelles polices personnalisées adaptées à vos dossiers */
 @font-face {
-    font-family: 'CustomSerif';
-    src: url('fonts/serif-font.woff2') format('woff2');
+    font-family: 'TT Drugs';
+    src: url('tt_drugs/TTDrugs-Regular.woff2') format('woff2'),
+         url('tt_drugs/TTDrugs-Regular.woff') format('woff'),
+         url('tt_drugs/TTDrugs-Regular.otf') format('opentype'),
+         url('tt_drugs/TTDrugs-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'CustomSans';
-    src: url('fonts/sans-font.woff2') format('woff2');
+    font-family: 'Cocomat Pro';
+    src: url('fonts/CocomateProVF.woff2') format('woff2'),
+         url('fonts/CocomateProVF.woff') format('woff'),
+         url('fonts/CocomateProVF.otf') format('opentype'),
+         url('fonts/CocomateProVF.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'CustomDisplay';
-    src: url('fonts/display-font.woff2') format('woff2');
-    font-weight: 700;
+    font-family: 'Nixie';
+    src: url('nixie_one/NixieOne-Regular.woff2') format('woff2'),
+         url('nixie_one/NixieOne-Regular.woff') format('woff'),
+         url('nixie_one/NixieOne-Regular.otf') format('opentype'),
+         url('nixie_one/NixieOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Si vous avez d'autres variantes de poids */
+@font-face {
+    font-family: 'TT Drugs';
+    src: url('tt_drugs/TTDrugs-Bold.woff2') format('woff2'),
+         url('tt_drugs/TTDrugs-Bold.woff') format('woff'),
+         url('tt_drugs/TTDrugs-Bold.otf') format('opentype'),
+         url('tt_drugs/TTDrugs-Bold.ttf') format('truetype');
+    font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
@@ -36,9 +57,73 @@
     --shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     --radius: 12px;
     --container: 1200px;
-    --font-title: 'Playfair Display', serif;
-    --font-subtitle: 'Lato', sans-serif;
-    --font-body: 'Lato', sans-serif;
+    
+    /* Variables de polices avec fallbacks */
+    --font-title: 'TT Drugs', 'Times New Roman', serif;
+    --font-subtitle: 'Cocomat Pro', 'Arial', sans-serif;
+    --font-body: 'Nixie', 'Georgia', serif;
+}
+
+/* Application des polices */
+
+/* Tous les titres principaux - TT Drugs */
+h1, .section-title, .hero-title, .legal-header h1, .contact-hero h1, .services-hero h1 {
+    font-family: var(--font-title) !important;
+    font-weight: normal;
+}
+
+/* Tous les sous-titres - Cocomat Pro */
+h2, h3, .section-subtitle, .benefit-content h3, .service-content h2, .legal-card h2, .contact-info h2, .contact-form h2, .cta-card h2 {
+    font-family: var(--font-subtitle) !important;
+    font-weight: normal;
+}
+
+/* Tout le texte de base - Nixie */
+body, p, div, span, a, input, textarea, select, li, label, .legal-text, .service-intro, .benefit-content p, .testimonial-content {
+    font-family: var(--font-body) !important;
+    font-weight: normal;
+}
+
+/* Navigation - Cocomat Pro */
+.brand-text, .dropdown-list a, .footer-links a {
+    font-family: var(--font-subtitle) !important;
+}
+
+/* Boutons - Cocomat Pro */
+.btn, .btn-primary, .btn-outline, .btn-light {
+    font-family: var(--font-subtitle) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Formulaires */
+.form-group label, .contact-item strong, .testimonial-author {
+    font-family: var(--font-subtitle) !important;
+    font-weight: 600;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+    font-family: var(--font-body) !important;
+}
+
+/* Éléments spéciaux */
+.service-number {
+    font-family: var(--font-subtitle) !important;
+    font-weight: bold;
+}
+
+/* Fallback pour les navigateurs qui ne supportent pas les polices */
+.font-fallback h1, .font-fallback .section-title {
+    font-family: 'Times New Roman', serif !important;
+}
+
+.font-fallback h2, .font-fallback h3 {
+    font-family: 'Arial', sans-serif !important;
+}
+
+.font-fallback body, .font-fallback p {
+    font-family: 'Georgia', serif !important;
 }
 
 /* Base styles */
