@@ -619,32 +619,57 @@ img {
     height: 50px !important;
 }
 
-/* Mobile - empiler verticalement avec plus d'espace */
+/* Uniformisation parfaite des boutons hero */
+.hero-actions .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 1.2rem 2.8rem !important;
+    border-radius: 50px !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem !important;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    text-align: center !important;
+    line-height: 1 !important;
+    min-width: 280px !important; /* Largeur minimale identique */
+    height: 55px !important; /* Hauteur identique */
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+}
+
+.hero-actions .btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--text-light);
+    box-shadow: var(--shadow);
+}
+
+.hero-actions .btn-outline {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--primary);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile - garder les mêmes proportions */
 @media (max-width: 768px) {
-    .hero-actions {
-        flex-direction: column;
-        gap: 1rem;
-        margin-top: 2rem;
-    }
-    
     .hero-actions .btn {
-        width: 90%;
-        max-width: 300px;
-        margin: 0.5rem 0;
+        min-width: 260px !important;
+        height: 50px !important;
+        padding: 1rem 2.5rem !important;
+        font-size: 0.95rem !important;
     }
 }
 
-/* Très petits écrans */
 @media (max-width: 480px) {
-    .hero-actions {
-        gap: 0.8rem;
-    }
-    
     .hero-actions .btn {
-        width: 95%;
-        max-width: 280px;
-        font-size: 0.9rem !important;
+        min-width: 240px !important;
+        height: 48px !important;
         padding: 0.9rem 2rem !important;
+        font-size: 0.9rem !important;
     }
 }
 
