@@ -552,30 +552,56 @@ img {
 
 /* Responsive hero - correction aussi */
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 3.5rem;
-        letter-spacing: 2px;
+    .hero-title, .section-title h1 {
+        font-size: 2.5rem !important; /* Réduit de 3.5rem */
+        line-height: 1.1 !important;
+        margin-bottom: 1.5rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
-
-    .hero-actions {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .btn {
-        width: 100%;
-        max-width: 280px;
-        padding: 0.9rem 1.8rem;
-        font-size: 0.95rem;
+    
+    .hero-content h1 {
+        font-size: 2.2rem !important;
+        text-align: center;
+        padding: 0 1rem;
+        max-width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    .hero-actions .btn {
-        max-width: 260px;
-        padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
+    .hero-title, .section-title h1, .hero-content h1 {
+        font-size: 2rem !important; /* Encore plus petit pour très petits écrans */
+        line-height: 1.1 !important;
+        margin-bottom: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    /* Spécifiquement pour le mot "Conciergerie" s'il est trop long */
+    .hero-title {
+        letter-spacing: -1px !important; /* Resserre les lettres */
+        word-spacing: -2px !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero-title, .hero-content h1 {
+        font-size: 1.8rem !important; /* Pour iPhone SE et petits écrans */
+        letter-spacing: -1.5px !important;
+    }
+}
+
+/* S'assurer que le conteneur ne déborde pas */
+.hero-content, .container {
+    max-width: 100%;
+    overflow-x: hidden;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (max-width: 480px) {
+    .hero-content, .container {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
 }
 
