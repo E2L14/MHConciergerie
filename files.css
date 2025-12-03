@@ -1888,3 +1888,14 @@ img {
         padding: 2rem;
     }
 }
+
+/* Mobile break class */
+.mobile-break {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-break {
+        display: block;
+    }
+}
