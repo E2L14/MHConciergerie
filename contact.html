@@ -9,8 +9,9 @@
     <link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
     
+    <link rel="preload" as="font" href="tt_drugs/TTDrugs-Regular.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="tt_drugs/TTDrugs-Bold.woff2" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="files.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="site-header">
@@ -79,7 +80,7 @@
 
                     <div class="contact-form">
                         <h2>Demandez votre devis gratuit</h2>
-                        <form action="https://formspree.io/f/mvgwnpvy" method="POST">
+                        <form class="enhanced-form" action="https://formspree.io/f/mvgwnpvy" method="POST">
                             <div class="form-group">
                                 <label for="nom">Nom*</label>
                                 <input type="text" id="nom" name="nom" required>
@@ -120,6 +121,7 @@
                             </div>
                             
                             <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
+                            <p class="form-status" aria-live="polite"></p>
                         </form>
                     </div>
                 </div>
@@ -130,7 +132,7 @@
     <footer class="site-footer">
         <div class="footer-inner container" style="position: relative;">
             <a href="index.html" class="footer-brand">
-                <img src="images/LogoMH.png" alt="MH Conciergerie Logo">
+                <img src="images/LogoMH.png" alt="MH Conciergerie Logo" loading="lazy">
             </a>
             <div class="footer-links">
                 <a href="index.html">Accueil</a>
@@ -202,6 +204,33 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // Form enhancement with status messages
+    const enhancedForms = document.querySelectorAll('.enhanced-form');
+    const enhanceForm = (form) => {
+        const status = form.querySelector('.form-status');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (status) status.textContent = 'Envoi…';
+            const data = new FormData(form);
+            try {
+                const res = await fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (res.ok) {
+                    form.reset();
+                    if (status) status.textContent = 'Merci, message envoyé !';
+                } else {
+                    if (status) status.textContent = 'Une erreur est survenue. Réessayez.';
+                }
+            } catch (err) {
+                if (status) status.textContent = 'Erreur réseau. Vérifiez votre connexion.';
+            }
+        });
+    };
+    enhancedForms.forEach(enhanceForm);
 
     // Back-to-top button behavior
     const backToTop = document.getElementById('back-to-top');

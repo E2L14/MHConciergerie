@@ -309,12 +309,13 @@ img {
     display: flex;
     flex-direction: column;
     gap: 6px;
-    background: none;
+    background: rgba(0, 0, 0, 0.28);
     border: none;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0.55rem;
     z-index: 1001;
     position: relative;
+    border-radius: 999px;
 }
 
 .hamburger-menu span {
@@ -328,6 +329,11 @@ img {
 
 .hamburger-menu:hover span {
     background-color: var(--secondary);
+}
+
+.hamburger-menu:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: 4px;
 }
 
 .hamburger-menu.active span:nth-child(1) {
@@ -652,6 +658,18 @@ img {
     color: var(--text-light);
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(59, 71, 38, 0.4);
+}
+
+/* Focus visible for accessibility */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 2px rgba(59, 71, 38, 0.15);
 }
 
 /* Responsive hero - correction aussi */
