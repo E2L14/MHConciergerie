@@ -40,10 +40,15 @@
 
     <main>
         <!-- Header de la page -->
-        <section class="legal-header">
+        <section class="services-hero">
             <div class="container">
-                <h1>Mentions Légales</h1>
-                <p class="subtitle">Informations légales et conditions d'utilisation</p>
+                <div class="services-hero-content">
+                    <h1 class="fade-in-up">Mentions Légales</h1>
+                    <div class="logo-background">
+                        <img src="images/LogoMH.png" alt="MH Conciergerie Logo" class="hero-logo-bg">
+                    </div>
+                </div>
+                <p class="subtitle fade-in-up delay-1">Informations légales et conditions d'utilisation</p>
             </div>
         </section>
 
@@ -149,8 +154,16 @@
                 </a>
             </div>
             <p class="muted">© 2025 MHome Conciergerie. Tous droits réservés.</p>
+
         </div>
     </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" aria-label="Remonter en haut" title="Haut de page">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 4l-8 8h6v8h4v-8h6z"/>
+        </svg>
+    </button>
 
     <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -212,6 +225,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 hamburgerToggle.classList.remove('active');
                 dropdownMenu.classList.remove('active');
             });
+        });
+    }
+
+    // Back-to-top button behavior
+    const backToTop = document.getElementById('back-to-top');
+    if (backToTop) {
+        const toggleBackToTop = () => {
+            const showThreshold = 250;
+            if (window.scrollY > showThreshold) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        };
+
+        window.addEventListener('scroll', toggleBackToTop, { passive: true });
+        window.addEventListener('load', toggleBackToTop);
+
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 });

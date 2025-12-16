@@ -455,6 +455,14 @@ img {
     .header-inner {
         padding: 0 1rem;
     }
+    .services-hero {
+        padding: 6rem 0 6rem;
+        min-height: 380px;
+    }
+    .hero-logo-bg {
+        width: 320px;
+        height: 320px;
+    }
     
     .brand img {
         width: 60px;
@@ -583,6 +591,14 @@ img {
         letter-spacing: 1px !important;
         word-spacing: 6px !important;
         line-height: 1.2 !important;
+    }
+    .services-hero {
+        padding: 5.5rem 0 5.5rem;
+        min-height: 340px;
+    }
+    .hero-logo-bg {
+        width: 280px;
+        height: 280px;
     }
 }
 
@@ -1046,11 +1062,12 @@ img {
 
 .logo-background {
     position: absolute;
-    top: 50%;
+    top: 52%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
     opacity: 0.1;
+    pointer-events: none;
 }
 
 .hero-logo-bg {
@@ -1059,6 +1076,7 @@ img {
     border-radius: 50%;
     border: 6px solid rgba(255,255,255,0.9);
     box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+    display: block;
 }
 
 .services-hero .subtitle {
@@ -1155,7 +1173,8 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(59, 71, 38, 0.9), rgba(184, 168, 125, 0.7));
+    opacity: 0.1;
+    pointer-events: none;
     opacity: 0;
     display: flex;
     align-items: center;
@@ -1433,19 +1452,9 @@ img {
 
 /* Contenu principal avec fond */
 .contact-main {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: white;
     padding: 6rem 0;
     position: relative;
-}
-
-.contact-main::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="contact-dots" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="1.5" fill="rgba(184,168,125,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23contact-dots)"/></svg>');
 }
 
 .contact-content {
@@ -1995,9 +2004,10 @@ img {
 
 /* Header de la page légale */
 .legal-header {
+    /* Harmonize with services/contact hero */
     background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: white;
-    padding: 8rem 0 4rem;
+    color: var(--text-light);
+    padding: 8rem 0 6rem; /* match services spacing */
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -2015,21 +2025,22 @@ img {
 
 .legal-header h1 {
     font-family: var(--font-title);
-    font-size: 3.5rem;
+    font-size: 4rem; /* match services */
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     position: relative;
     z-index: 2;
 }
 
 .legal-header .subtitle {
-    font-size: 1.2rem;
-    opacity: 0.95;
+    font-size: 1.3rem; /* match services subtitle */
+    opacity: 1;
     position: relative;
     z-index: 2;
     color: white !important;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-weight: 400;
 }
 
 .legal-content {
@@ -2120,11 +2131,11 @@ img {
 /* Responsive mentions légales */
 @media (max-width: 768px) {
     .legal-header {
-        padding: 6rem 0 3rem;
+        padding: 5rem 0 5rem; /* symmetric like services */
     }
     
     .legal-header h1 {
-        font-size: 2.5rem;
+        font-size: 3.2rem; /* closer to services/contact mobile scale */
     }
     
     .legal-grid {
@@ -2154,40 +2165,11 @@ img {
 /* Logo en arrière-plan du header avec bords arrondis */
 
 /* Page Contact - logo arrondi */
-.contact-hero::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-    background-image: url('images/logo.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.1;
-    z-index: 1;
-    border-radius: 50%; /* Rond complet */
-}
+/* Remove old pseudo-element logo; using shared markup like services */
+.contact-hero::after { content: none; }
 
 /* Page Mentions Légales - logo arrondi */
-.legal-header::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-    background-image: url('images/logo.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.1;
-    z-index: 1;
-    border-radius: 50%; /* Rond complet */
-}
+.legal-header::after { content: none; }
 
 /* Alternative avec coins arrondis (si vous préférez rectangulaire arrondi) */
 .contact-hero.rounded::after,
@@ -2232,13 +2214,8 @@ img {
 }
 
 @media (max-width: 480px) {
-    .footer-inner {
-        padding: 1.5rem 0.5rem;
-        gap: 1rem;
-    }
-    
-    .footer-links {
-        gap: 0.8rem;
+    .services-hero {
+        padding: 8rem 0 6rem;
     }
     
     .instagram-link {
@@ -2268,18 +2245,98 @@ img {
 }
 
 @media (max-width: 768px) {
-    .footer-inner {
-        flex-direction: column;
-        justify-content: center !important;
-        align-items: center !important;
-        text-align: center !important;
+    .services-hero {
+        padding: 8rem 0 6rem;
     }
-    
-    .footer-links {
+    .footer-inner {
         display: flex;
         flex-direction: column;
         align-items: center !important;
         justify-content: center !important;
         width: 100%;
+    }
+}
+
+/* Back to top button - fixed bottom-right */
+#back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(255,255,255,0.45);
+    border-radius: 999px;
+    background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.18), rgba(255,255,255,0)),
+        linear-gradient(135deg, rgba(59,71,38,0.92), rgba(184,168,125,0.72));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(14px);
+    box-shadow:
+        0 18px 46px rgba(0,0,0,0.32),
+        0 0 0 1px rgba(255,255,255,0.06);
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(18px) scale(0.95);
+    transition: background 180ms ease, transform 160ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    z-index: 9999;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    animation: footerBackToTopIn 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+#back-to-top:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow:
+        0 20px 52px rgba(0,0,0,0.36),
+        0 0 0 1px rgba(255,255,255,0.08);
+    background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.24), rgba(255,255,255,0)),
+        linear-gradient(135deg, rgba(184,168,125,0.9), rgba(59,71,38,0.95));
+    border-color: rgba(255,255,255,0.8);
+}
+
+#back-to-top:focus {
+    outline: none;
+    box-shadow:
+        0 0 0 3px rgba(184,168,125,0.5),
+        0 20px 50px rgba(0,0,0,0.32),
+        0 0 0 1px rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.85);
+}
+
+#back-to-top svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Pop-in only (pulse removed for a cleaner look) */
+#back-to-top.visible {
+    animation-name: footerBackToTopIn;
+    animation-duration: 320ms;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    animation-iteration-count: 1;
+}
+
+@keyframes footerBackToTopIn {
+    0% { opacity: 0; transform: translateY(16px) scale(0.92); }
+    55% { opacity: 1; transform: translateY(0) scale(1.05); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* subtlePulse removed */
+
+@media (max-width: 480px) {
+    #back-to-top {
+        right: 16px;
+        bottom: 16px;
+        width: 56px;
+        height: 56px;
+        border-width: 1.5px;
     }
 }
