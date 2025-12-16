@@ -617,6 +617,48 @@ img {
     }
 }
 
+/* Stacked hero title refinement */
+.hero-title {
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.15em !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+}
+
+.hero-title-top {
+    font-family: var(--font-title) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.15em !important;
+    font-size: clamp(2.4rem, 8vw, 5rem) !important;
+    color: var(--primary) !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1) !important;
+    line-height: 1 !important;
+}
+
+.hero-title-bottom {
+    font-family: var(--font-subtitle) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.25em !important;
+    font-size: clamp(1.2rem, 3.2vw, 2rem) !important;
+    color: var(--primary) !important;
+    line-height: 1.1 !important;
+}
+
+.hero-title-bottom::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 3px;
+    margin: 0.5rem auto 0;
+    background: linear-gradient(90deg, var(--secondary), var(--primary));
+    border-radius: 2px;
+    opacity: 0.9;
+}
+
 /* Styles des boutons */
 .btn {
     display: inline-block;
@@ -1051,6 +1093,60 @@ textarea:focus-visible {
 .muted {
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
+}
+
+/* Final hero title centering and font overrides */
+.hero .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero .hero-title {
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.2em !important;
+    text-align: center !important;
+}
+
+.hero .hero-title-top {
+    font-family: var(--font-title) !important; /* TT Drugs */
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.18em !important;
+    font-size: clamp(2.6rem, 7.5vw, 5.2rem) !important;
+    color: var(--primary) !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.12) !important;
+    line-height: 1 !important;
+}
+
+.hero .hero-title-bottom {
+    font-family: var(--font-title) !important; /* Keep same brand font */
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.30em !important;
+    font-size: clamp(1.1rem, 2.8vw, 2.2rem) !important;
+    color: var(--primary) !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.08) !important;
+    line-height: 1.1 !important;
+}
+
+.hero .hero-title-bottom::after {
+    content: '';
+    display: block;
+    width: 64%;
+    height: 3px;
+    margin: 0.55rem auto 0;
+    background: linear-gradient(90deg, var(--secondary), var(--primary));
+    border-radius: 2px;
+    opacity: 0.9;
+}
+
+/* Slight downward offset for the hero content */
+.hero .hero-inner {
+    padding-top: clamp(16px, 7vh, 100px);
 }
 
 /* Ajouts pour les autres pages (services, contact, mentions) */
