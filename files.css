@@ -750,7 +750,7 @@ img {
     text-transform: uppercase !important;
     letter-spacing: 0.25em !important;
     font-size: clamp(2rem, 5.5vw, 3.4rem) !important;
-    color: var(--primary) !important;
+    color: white !important;
     line-height: 1.1 !important;
 }
 
@@ -1224,7 +1224,7 @@ textarea:focus-visible {
     text-transform: uppercase !important;
     letter-spacing: 0.18em !important;
     font-size: clamp(2.6rem, 7.5vw, 5.2rem) !important;
-    color: var(--primary) !important;
+    color: rgba(255, 255, 255, 0.95) !important;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.12) !important;
     line-height: 1 !important;
 }
@@ -1243,7 +1243,7 @@ textarea:focus-visible {
     text-transform: uppercase !important;
     letter-spacing: 0.30em !important;
     font-size: clamp(1.1rem, 2.8vw, 2.2rem) !important;
-    color: var(--primary) !important;
+    color: rgba(255, 255, 255, 0.95) !important;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.08) !important;
     line-height: 1.1 !important;
 }
