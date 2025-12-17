@@ -51,8 +51,8 @@
     --text-dark: #2C3E20;
     --text-light: #FFFFFF;
     --text-muted: #6B7280;
-    --surface: #FFFFFF;
-    --background: #F9FAFB;
+    --surface: #F5EDE0;
+    --background: #F5EDE0;
     --border: #E5E7EB;
     --shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     --radius: 12px;
@@ -370,7 +370,7 @@ img {
     top: 100%;
     left: 0;
     margin-top: 0.8rem;
-    background: #ffffff;
+    background: #F5EDE0;
     border-radius: 8px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     opacity: 0;
@@ -500,6 +500,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .hero::before {
@@ -515,6 +516,23 @@ img {
     background-repeat: no-repeat;
     filter: blur(1px) brightness(0.7);
     z-index: 0;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 650px;
+    height: 650px;
+    background-image: url('images/logo_transp.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .hero-inner {
@@ -632,7 +650,7 @@ img {
     font-weight: 700 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.15em !important;
-    font-size: clamp(2.4rem, 8vw, 5rem) !important;
+    font-size: clamp(3.2rem, 10vw, 6rem) !important;
     color: var(--primary) !important;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1) !important;
     line-height: 1 !important;
@@ -643,7 +661,7 @@ img {
     font-weight: 600 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.25em !important;
-    font-size: clamp(1.2rem, 3.2vw, 2rem) !important;
+    font-size: clamp(1.4rem, 4vw, 2.4rem) !important;
     color: var(--primary) !important;
     line-height: 1.1 !important;
 }
@@ -1185,8 +1203,8 @@ textarea:focus-visible {
 }
 
 .hero-logo-bg {
-    width: 360px;
-    height: 360px;
+    width: clamp(200px, 50vw, 360px);
+    height: clamp(200px, 50vw, 360px);
     border-radius: 50%;
     border: 6px solid rgba(255,255,255,0.9);
     box-shadow: 0 8px 28px rgba(0,0,0,0.35);
@@ -1829,7 +1847,7 @@ textarea:focus-visible {
 }
 
 .benefit-card {
-    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    background: linear-gradient(145deg, #F5EDE0, #f9f4ee);
     border: 1px solid rgba(184, 168, 125, 0.2);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
