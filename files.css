@@ -51,7 +51,7 @@
     --text-dark: #2C3E20;
     --text-light: #FFFFFF;
     --text-muted: #6B7280;
-    --surface: #F5EDE0;
+    --surface: #FFFFFF;
     --background: #F5EDE0;
     --border: #E5E7EB;
     --shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
@@ -220,11 +220,15 @@ body, p, div, span, a, input, textarea, select, li, label, .legal-text, .service
 .animate-delay-4 { animation-delay: 0.4s; }
 .animate-delay-5 { animation-delay: 0.5s; }
 
+html {
+    background: #F5EDE0 !important;
+}
+
 body {
     font-family: var(--font-body);
     line-height: 1.6;
     color: var(--text-dark);
-    background: var(--background);
+    background: #F5EDE0 !important;
 }
 
 img {
@@ -295,13 +299,23 @@ img {
 }
 
 .brand img {
-    width: 95px;
-    height: 95px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid rgba(255, 255, 255, 0.95);
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
     transition: all 0.3s ease;
+    image-rendering: -webkit-optimize-contrast;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 540px) {
+    .brand img {
+        width: 110px;
+        height: 110px;
+    }
 }
 
 /* Hamburger menu button */
@@ -313,6 +327,7 @@ img {
     border: none;
     cursor: pointer;
     padding: 0.55rem;
+    margin-left: 0.8rem;
     z-index: 1001;
     position: relative;
     border-radius: 999px;
@@ -370,7 +385,7 @@ img {
     top: 100%;
     left: 0;
     margin-top: 0.8rem;
-    background: #F5EDE0;
+    background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     opacity: 0;
@@ -524,13 +539,13 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 650px;
-    height: 650px;
+    width: 500px;
+    height: 500px;
     background-image: url('images/logo_transp.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.15;
+    opacity: 0.22;
     z-index: 1;
     pointer-events: none;
 }
@@ -661,7 +676,7 @@ img {
     font-weight: 600 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.25em !important;
-    font-size: clamp(1.4rem, 4vw, 2.4rem) !important;
+    font-size: clamp(2rem, 5.5vw, 3.4rem) !important;
     color: var(--primary) !important;
     line-height: 1.1 !important;
 }
@@ -961,7 +976,7 @@ textarea:focus-visible {
 /* Sections */
 .testimonials-section {
     padding: 5rem 0;
-    background: var(--surface);
+    background: transparent;
 }
 
 .section-header {
@@ -1224,7 +1239,6 @@ textarea:focus-visible {
 
 .services-showcase {
     padding: 6rem 0;
-    background: linear-gradient(135deg, #f1f5f0 0%, #e8f0e5 100%);
 }
 
 /* Conteneur principal pour chaque service - plus compact et élégant */
@@ -1233,7 +1247,6 @@ textarea:focus-visible {
     align-items: stretch;
     gap: 0;
     margin-bottom: 4rem;
-    background: white;
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 15px 50px rgba(59, 71, 38, 0.1);
@@ -1584,7 +1597,6 @@ textarea:focus-visible {
 
 /* Contenu principal avec fond */
 .contact-main {
-    background: white;
     padding: 6rem 0;
     position: relative;
 }
@@ -1821,7 +1833,6 @@ textarea:focus-visible {
 
 /* Section "Pourquoi passer par une conciergerie" */
 #why-conciergerie {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     position: relative;
 }
 
@@ -1847,7 +1858,7 @@ textarea:focus-visible {
 }
 
 .benefit-card {
-    background: linear-gradient(145deg, #F5EDE0, #f9f4ee);
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
     border: 1px solid rgba(184, 168, 125, 0.2);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -1989,7 +2000,6 @@ textarea:focus-visible {
 
 /* Section témoignages */
 .testimonials-section {
-    background: linear-gradient(135deg, #f1f3f4 0%, #e8eaed 100%);
     padding: 6rem 0;
     position: relative;
 }
@@ -2471,4 +2481,30 @@ textarea:focus-visible {
         height: 56px;
         border-width: 1.5px;
     }
+}
+
+/* Apply the same transparent logo watermark to other page headers */
+.services-hero::after,
+.contact-hero::after,
+.legal-header::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background-image: url('images/logo_transp.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.22;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Hide legacy inline logo overlays so only the watermark remains */
+.services-hero .logo-background,
+.contact-hero .logo-background {
+    display: none;
 }
