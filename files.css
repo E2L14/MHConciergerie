@@ -593,7 +593,7 @@ img {
 .hero::after {
     content: '';
     position: absolute;
-    top: 50%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 500px;
@@ -602,7 +602,7 @@ img {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.22;
+    opacity: 0.35;
     z-index: 1;
     pointer-events: none;
 }
@@ -870,7 +870,7 @@ textarea:focus-visible {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 .hero-actions .btn {
