@@ -254,6 +254,16 @@ img {
     padding: 5rem 0;
 }
 
+/* Clip horizontal overflow from large shadows or positioned elements on tablets */
+.section,
+.services-showcase,
+.contact-main,
+.testimonials-section,
+.cta-section,
+.legal-content {
+    overflow-x: clip;
+}
+
 .section-title {
     font-family: var(--font-title);
     font-size: 2.5rem;
